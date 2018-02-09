@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WPR-EK-PlN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialBold.ttf">
+            <string>Arial-BoldMT</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Space X Launches-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpaceXLaunchSearchViewController" customModule="MM_SpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star-field-2294797_960_720" translatesAutoresizingMaskIntoConstraints="NO" id="IDg-Uw-d55">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tesla in space" translatesAutoresizingMaskIntoConstraints="NO" id="qVD-FS-FOH">
+                                <rect key="frame" x="0.0" y="404" width="375" height="249"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="249" id="VhG-2b-a1X"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FH-launch-render-SpaceX" translatesAutoresizingMaskIntoConstraints="NO" id="vVj-j3-Xdj">
+                                <rect key="frame" x="16" y="64" width="343" height="217"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="Rb4-Eh-yR4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TC6-Ao-Atw">
+                                <rect key="frame" x="104.66666666666669" y="450" width="166" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
+                                <state key="normal" title="SEARCH">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bqA-lv-rBp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-LZ-DX4">
+                                <rect key="frame" x="139" y="289" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cav-SA-mQD"/>
+                                    <constraint firstAttribute="width" constant="97" id="qn7-Kf-hV8"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="yearEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wFO-kw-f4H"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izo-Jk-uuh">
+                                <rect key="frame" x="52" y="350" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="JqL-fg-6je"/>
+                                    <constraint firstAttribute="height" constant="30" id="NLz-jx-Taj"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dateEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="WRF-Hz-tcB"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="End Date" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1CD-rr-zO2">
+                                <rect key="frame" x="203.5" y="350" width="119" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="119" id="B5U-9g-gRe"/>
+                                    <constraint firstAttribute="height" constant="30" id="ftq-aj-qpe"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dateEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="cl8-ag-tSp"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7I-oS-Cfc">
+                                <rect key="frame" x="180" y="355" width="15.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="2Vo-LM-YIg"/>
+                                    <constraint firstAttribute="width" constant="15.33" id="Wlv-XR-rxx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.99301610679999996" blue="0.84521051390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter dates as: YYYY-MM-DD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35b-cU-NbA">
+                                <rect key="frame" x="43" y="412" width="290" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99764536452251606" green="1" blue="0.9823207094093187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92392292419493849" green="0.96641493885423335" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="C7I-oS-Cfc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="03k-QI-Fj6"/>
+                            <constraint firstItem="IDg-Uw-d55" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="18I-Tu-8S9"/>
+                            <constraint firstAttribute="trailing" secondItem="qVD-FS-FOH" secondAttribute="trailing" id="1ao-oL-HJo"/>
+                            <constraint firstItem="1CD-rr-zO2" firstAttribute="centerY" secondItem="izo-Jk-uuh" secondAttribute="centerY" id="C9U-KE-lWk"/>
+                            <constraint firstItem="vVj-j3-Xdj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="H9h-He-jHW"/>
+                            <constraint firstItem="TNd-LZ-DX4" firstAttribute="top" secondItem="vVj-j3-Xdj" secondAttribute="bottom" constant="8" id="Hub-kL-nRn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vVj-j3-Xdj" secondAttribute="trailing" constant="16" id="MIl-gT-aFT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qVD-FS-FOH" secondAttribute="bottom" constant="14" id="SWD-ap-gUL"/>
+                            <constraint firstItem="IDg-Uw-d55" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WEA-mM-sjr"/>
+                            <constraint firstItem="1CD-rr-zO2" firstAttribute="leading" secondItem="C7I-oS-Cfc" secondAttribute="trailing" constant="8" id="X0g-W1-Hzn"/>
+                            <constraint firstItem="vVj-j3-Xdj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ZxF-x0-FiK"/>
+                            <constraint firstItem="TNd-LZ-DX4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bhm-aX-iN7"/>
+                            <constraint firstItem="C7I-oS-Cfc" firstAttribute="top" secondItem="TNd-LZ-DX4" secondAttribute="bottom" constant="36" id="gFE-VK-oDC"/>
+                            <constraint firstItem="C7I-oS-Cfc" firstAttribute="centerY" secondItem="izo-Jk-uuh" secondAttribute="centerY" id="gkb-Ao-eKp"/>
+                            <constraint firstItem="C7I-oS-Cfc" firstAttribute="leading" secondItem="izo-Jk-uuh" secondAttribute="trailing" constant="8" id="rsz-qm-f1S"/>
+                            <constraint firstItem="IDg-Uw-d55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uTb-UV-Gqi"/>
+                            <constraint firstItem="IDg-Uw-d55" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uhm-dq-Eka"/>
+                            <constraint firstItem="qVD-FS-FOH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yqc-RP-iIP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Space X Launches" id="dkl-TY-jRJ"/>
+                    <connections>
+                        <outlet property="endDate" destination="1CD-rr-zO2" id="QaS-oh-yEY"/>
+                        <outlet property="startDate" destination="izo-Jk-uuh" id="nTh-R3-oia"/>
+                        <outlet property="year" destination="TNd-LZ-DX4" id="hVB-8Y-fdS"/>
+                        <segue destination="e2q-rV-LhO" kind="show" identifier="Show Launches" id="xzD-Zr-1cM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869.60000000000002" y="116.74876847290641"/>
+        </scene>
+        <!--Show Launches Info View Controller-->
+        <scene sceneID="pAW-zx-zyX">
+            <objects>
+                <viewController id="e2q-rV-LhO" customClass="ShowLaunchesInfoViewController" customModule="MM_SpaceX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z9K-AD-qG8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9b9-xb-G7l">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" red="1" green="0.99301610679999996" blue="0.84521051390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="168" id="uEF-c1-WRU" customClass="LaunchesTableViewCell" customModule="MM_SpaceX" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="168"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uEF-c1-WRU" id="AqI-xp-icb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flight Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyd-c0-YbZ">
+                                                    <rect key="frame" x="15" y="0.0" width="322" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" red="0.11473417370589967" green="0.15891421215316437" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Launch Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muv-jQ-vL4">
+                                                    <rect key="frame" x="16" y="39" width="382" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" text="Flight Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UJd-QM-SnQ">
+                                                    <rect key="frame" x="13" y="68" width="384" height="73"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="flightDescription" destination="UJd-QM-SnQ" id="rmd-a5-Osh"/>
+                                            <outlet property="flightNumber" destination="uyd-c0-YbZ" id="fPm-rl-o1f"/>
+                                            <outlet property="launchDate" destination="muv-jQ-vL4" id="uMP-48-2I0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="e2q-rV-LhO" id="grt-Ln-71W"/>
+                                    <outlet property="delegate" destination="e2q-rV-LhO" id="pkI-hg-CSw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9b9-xb-G7l" firstAttribute="leading" secondItem="7EY-fL-knC" secondAttribute="leading" id="3cU-CZ-8gs"/>
+                            <constraint firstItem="9b9-xb-G7l" firstAttribute="top" secondItem="7EY-fL-knC" secondAttribute="top" constant="44" id="WhG-LA-ffg"/>
+                            <constraint firstItem="9b9-xb-G7l" firstAttribute="bottom" secondItem="7EY-fL-knC" secondAttribute="bottom" id="abR-87-oBy"/>
+                            <constraint firstItem="9b9-xb-G7l" firstAttribute="trailing" secondItem="7EY-fL-knC" secondAttribute="trailing" id="u8b-1x-saf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7EY-fL-knC"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="9b9-xb-G7l" id="ZKb-2z-lYZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ek-7w-x2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1564" y="117"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="k6t-iG-5vV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WPR-EK-PlN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PRi-D2-JCM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.01176470588" green="0.01176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FK5-fK-Mq5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbL-aO-6Ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="118.20652173913044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FH-launch-render-SpaceX" width="2999" height="1678"/>
+        <image name="Tesla in space" width="780" height="439"/>
+        <image name="star-field-2294797_960_720" width="960" height="600"/>
+    </resources>
+</document>
