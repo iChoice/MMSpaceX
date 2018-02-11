@@ -39,16 +39,39 @@ class ShowLaunchesInfoViewController: UIViewController, UITableViewDelegate, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! LaunchesTableViewCell
         let launch = self.showLaunchesInfoVM.launches.missions[indexPath.row]!
 
-        cell.flightNumber.text = "Flight Number: \(String(describing: launch.flight_number))"
-        cell.launchDate.text = "Launch Date:  \(String(describing: launch.launch_date))"
+        cell.rocketName.text = launch.rocket_name
+        let currentCellFlightNumber = "\(String(describing: launch.flight_number))"
+        cell.flightNumber.text = currentCellFlightNumber
+        cell.launchDate.text = "\(String(describing:self.showLaunchesInfoVM.cleanUpLaunchDate(dateStr: launch.launch_date)))"
         cell.flightDescription.text = launch.details
+       
+        if let missionPathURL = launch.links["mission_patch"] {
+            print("Image URL STR: \(missionPathURL)")
+            self.showLaunchesInfoVM.getImageFromURL(urlStr: missionPathURL) { (imageData, error) in
+                if let bookImage = imageData {
+                    DispatchQueue.main.async {
+                        if cell.flightNumber.text == currentCellFlightNumber { // Make sure we are on the same cell when the image finally downloads (cell didn't get reused).
+                            cell.missionPatch.image = UIImage(data:bookImage)
+                            cell.layoutSubviews()
+                        } // if cell.flightNumber.text
+                    } // DispatchQueue.main
+                } // let bookImage ...
+            }//  getImageFromURL ...
+        } // if missionPathURL ...
         return cell
-    }
-
+    } // func tableView ... cellForRowAt
+    
+    
+    
+    
 }
 
 
+
 class LaunchesTableViewCell : UITableViewCell {
+    
+    @IBOutlet weak var missionPatch: UIImageView!
+    @IBOutlet weak var rocketName: UILabel!
     @IBOutlet weak var flightNumber: UILabel!
     @IBOutlet weak var launchDate: UILabel!
     @IBOutlet weak var flightDescription: UITextView!

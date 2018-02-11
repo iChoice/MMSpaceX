@@ -20,9 +20,11 @@ class SpaceXLaunchSearchViewModel {
                     self.launches.missions = [Launch?]()
                     for launchJSON in launchesJSON {
                         if let launch = Launch(json: launchJSON) {
+                            print("Launch JSON: \(launchJSON)")
                             self.launches.missions.append(launch)
                         }
                     }
+                    
                     completionHandler(self.launches, error)
                 }
             }

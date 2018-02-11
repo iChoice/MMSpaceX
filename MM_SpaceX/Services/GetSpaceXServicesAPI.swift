@@ -19,7 +19,7 @@ class GetSpaceXServicesAPI {
         
         if !(year == "") {
             // not empty year, use it.
-            let urlStringYearSearch = "https://api.spacexdata.com/v2/launches?launch_year="  + year
+            let urlStringYearSearch = "https://api.spacexdata.com/v2/launches?launch_year=" + year
             urlString = urlStringYearSearch
         } else {
             let urlStringDateRange = "https://api.spacexdata.com/v2/launches?start="+startDate+"&final="+endDate
