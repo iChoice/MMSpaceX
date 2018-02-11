@@ -46,8 +46,9 @@ class ShowLaunchesInfoViewController: UIViewController, UITableViewDelegate, UIT
         cell.flightDescription.text = launch.details
        
         if let missionPathURL = launch.links["mission_patch"] {
-            print("Image URL STR: \(missionPathURL)")
-            self.showLaunchesInfoVM.getImageFromURL(urlStr: missionPathURL) { (imageData, error) in
+            let missionPathURLHttps = missionPathURL.replacingOccurrences(of:"http", with: "https")
+            print("Image URL STR: \(missionPathURLHttps)")
+            self.showLaunchesInfoVM.getImageFromURL(urlStr: missionPathURLHttps) { (imageData, error) in
                 if let bookImage = imageData {
                     DispatchQueue.main.async {
                         if cell.flightNumber.text == currentCellFlightNumber { // Make sure we are on the same cell when the image finally downloads (cell didn't get reused).
