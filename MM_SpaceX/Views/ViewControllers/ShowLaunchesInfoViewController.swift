@@ -44,7 +44,9 @@ class ShowLaunchesInfoViewController: UIViewController, UITableViewDelegate, UIT
         cell.flightNumber.text = currentCellFlightNumber
         cell.launchDate.text = "\(String(describing:self.showLaunchesInfoVM.cleanUpLaunchDate(dateStr: launch.launch_date)))"
         cell.flightDescription.text = launch.details
-       
+        
+        // Get the mission patch image from the web.
+        // Given more time I would store this locally so that the scroll would be better and smoother.
         if let missionPathURL = launch.links["mission_patch"] {
             let missionPathURLHttps = missionPathURL.replacingOccurrences(of:"http", with: "https")
             print("Image URL STR: \(missionPathURLHttps)")
